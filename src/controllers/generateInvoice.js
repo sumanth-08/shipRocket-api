@@ -5,7 +5,7 @@ const generateInvoice = async (req, res) => {
     const token = req.headers.authorization;
 
     const orderDetails = {
-      ids: ["424348533"],
+      ids: ["434297525"],  // order_id
     };
 
     const response = await axios.post(

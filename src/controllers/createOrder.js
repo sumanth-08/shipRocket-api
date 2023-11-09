@@ -5,12 +5,12 @@ const orderDetails = async (req, res) => {
     const token = req.headers.authorization;
 
     const orderDetails = {
-      order_id: "666999666",
+      order_id: "111222333", // trackid
       order_date: "2023-11-07 13:25",
-      pickup_location: "moodbidre",
+      pickup_location: "moodbidre", // as mentioned in dashboard
 
-      comment: "test order",
-      billing_customer_name: "rahul",
+      comment: "",
+      billing_customer_name: "rahul", // first name of cust
       billing_last_name: "",
       billing_address: "ajith nagara",
       billing_address_2: "",
@@ -21,7 +21,7 @@ const orderDetails = async (req, res) => {
       billing_email: "raushanra4@gmail.com",
       billing_phone: "9721562372",
       shipping_is_billing: 1,
-      shipping_customer_name: "",
+      shipping_customer_name: "john",
       shipping_last_name: "",
       shipping_address: "bdkwdqdqdqwbkjkj",
       shipping_address_2: "",
@@ -37,12 +37,12 @@ const orderDetails = async (req, res) => {
           sku: "shoes455",
           units: "1",
           selling_price: "500",
-          discount: "100",
+          discount: "",
           tax: "",
           hsn: "",
         },
       ],
-      payment_method: "COD",
+      payment_method: "Prepaid", // COD
       shipping_charges: "",
       giftwrap_charges: "",
       transaction_charges: "",
@@ -51,7 +51,7 @@ const orderDetails = async (req, res) => {
       length: "10",
       breadth: "10",
       height: "6",
-      weight: "0.1",
+      weight: "5",
     };
 
     const response = await axios.post(
@@ -68,9 +68,7 @@ const orderDetails = async (req, res) => {
     res.json(response.data);
   } catch (error) {
     console.error(error.stack);
-    res
-      .status(500)
-      .json({ error: "An error occurred while tracking the shipment." });
+    res.status(500).json({ error: error.message });
   }
 };
 module.exports = { orderDetails };

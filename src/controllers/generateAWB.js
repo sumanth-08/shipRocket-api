@@ -5,8 +5,8 @@ const generateAWB = async (req, res) => {
     const token = req.headers.authorization;
 
     const orderDetails = {
-      shipment_id: "422266695",
-      courier_id: "10",
+      shipment_id: "432517211",
+      courier_id: "",
       status: "NEW",
     };
 
@@ -22,7 +22,7 @@ const generateAWB = async (req, res) => {
 
     res.json(response.data);
   } catch (error) {
-    console.error(error);
+    console.log(error.stack);
     res
       .status(500)
       .json({ error: "An error occurred while tracking the shipment." });

@@ -5,9 +5,8 @@ const generateLabel = async (req, res) => {
     const token = req.headers.authorization;
 
     const orderDetails = {
-      shipment_id: [422525128],
+      shipment_id: [432472674],  // shipment_id
     };
-    Z;
     const response = await axios.post(
       "https://apiv2.shiprocket.in/v1/external/courier/generate/label",
       orderDetails,

@@ -24,9 +24,9 @@ const serviceAvailability = async (req, res) => {
   }
 
   const courierDetails = {
-    order_id: "433691931",
+    order_id: "434297525",
     pickup_postcode: "574227",
-    delivery_postcode: "574240        ",
+    delivery_postcode: "180001",
 
     // "cod": "1",
     // "weight": "2",

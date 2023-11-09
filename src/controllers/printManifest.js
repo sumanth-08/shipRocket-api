@@ -5,7 +5,7 @@ const printManifest = async (req, res) => {
     const token = req.headers.authorization;
 
     const orderDetails = {
-      order_ids: 424348533,
+      order_ids: [434342062],
     };
 
     const response = await axios.post(

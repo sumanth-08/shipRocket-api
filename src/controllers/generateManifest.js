@@ -5,7 +5,7 @@ const generateManifest = async (req, res) => {
     const token = req.headers.authorization;
 
     const orderDetails = {
-      shipment_id: [422525128],
+      shipment_id: [432517211],
     };
 
     const response = await axios.post(
@@ -20,7 +20,7 @@ const generateManifest = async (req, res) => {
 
     res.json(response.data);
   } catch (error) {
-    console.error(error);
+    console.log(error.message);
     res
       .status(500)
       .json({ error: "An error occurred while tracking the shipment." });
